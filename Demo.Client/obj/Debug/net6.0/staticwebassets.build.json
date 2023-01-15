@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "dbKLbWiWb8A6h2O2vgoj/mzwRggFNUSKDiNFKBU5GIM=",
+  "Source": "Demo.Client",
+  "BasePath": "_content/Demo.Client",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Microsoft\\DT\\Repo\\Jaeger\\demo\\jaeger-opentelemetry-demo\\Demo.Server\\Demo.Server.csproj",
+      "Version": 2,
+      "Source": "Demo.Server",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
