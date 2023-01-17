@@ -2,6 +2,7 @@ namespace Demo.Client.Controllers
 {
     using Demo.Server.Models;
     using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
     using System.Text.Json;
 
     [ApiController]
@@ -10,6 +11,7 @@ namespace Demo.Client.Controllers
     {
         private readonly ILogger<WeatherController> logger;
         private readonly IHttpClientFactory httpClientFactory;
+        private static readonly ActivitySource Activity = new(nameof(WeatherController));
 
         public WeatherController(ILogger<WeatherController> logger, IHttpClientFactory httpClientFactory)
         {
@@ -20,6 +22,11 @@ namespace Demo.Client.Controllers
         [HttpGet]
         public async Task<IEnumerable<WeatherForecast>?> Get()
         {
+            using (var activity = Activity.StartActivity("Log Records", ActivityKind.Producer))
+            {
+                logger.LogInformation("Get the forecast of weather");
+                activity?.SetTag("Weather country", "China");
+            }
             var httpClient = httpClientFactory.CreateClient("DemoServer");
             var httpResponseMessage = await httpClient.GetAsync("/WeatherForecast");
             if (httpResponseMessage.IsSuccessStatusCode)
