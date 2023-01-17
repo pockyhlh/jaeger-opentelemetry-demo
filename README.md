@@ -53,3 +53,5 @@ builder.Services.AddOpenTelemetry()
 ```
 ## Output
 ![demo jaeger](./docs/demojaeger.png)
+
+![demo jaeger2](./docs/demojaeger2.png)
